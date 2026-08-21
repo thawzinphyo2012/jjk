@@ -1,0 +1,366 @@
+const translations = {
+  en: {
+    'nav.home': 'Home',
+    'nav.about': 'About',
+    'nav.service': 'Service',
+    'nav.graphic': 'Graphic',
+    'nav.faq': 'FAQ',
+    'nav.contact': 'Contact',
+    'hero.badge': 'Digital Growth Experts',
+    'hero.title1': 'TECH',
+    'hero.title2': 'NOLOGY',
+    'hero.desc': 'We help brands grow online through SEO, social media marketing, paid advertising, content strategy, and conversion-focused web design. From strategy to execution, we turn clicks into customers and data into decisions.',
+    'hero.cta1': 'Start a Project',
+    'hero.cta2': 'Explore Service',
+    'hero.stat1': 'Projects Delivered',
+    'hero.stat2': 'Uptime SLA',
+    'hero.stat3': 'Global Clients',
+    'hero.tag1': 'AI Core',
+    'hero.tag2': 'Cloud Edge',
+    'hero.tag3': 'Secure',
+    'about.label': 'Who We Are',
+    'about.title': 'Growing Brands Through Digital Excellence',
+    'about.p1': 'Technology is a full-service digital agency based in Yangon, Myanmar. We specialize in helping businesses of all sizes build a powerful online presence, attract targeted traffic, and convert visitors into loyal customers through proven digital marketing strategies.',
+    'about.p2': 'Our team of strategists, content creators, designers, and analysts work together to deliver campaigns that are creative, data-backed, and results-oriented. We believe every marketing dollar should be measurable — and every campaign should drive real business growth.',
+    'about.p3': 'Whether you need to rank higher on Google, grow your social media following, launch a paid ad campaign, or redesign your website for better conversions — we have the expertise and tools to make it happen.',
+    'about.founded': 'Founded',
+    'about.engineers': 'Engineers',
+    'about.countries': 'Countries',
+    'about.support': 'Support',
+    'about.ai': 'AI Processing',
+    'about.network': 'Network Load',
+    'about.security': 'Security Score',
+    'service.label': 'What We Do',
+    'service.title': 'Our Service',
+    'service.desc': 'Comprehensive digital marketing services designed to increase visibility, engagement, and revenue. We tailor every strategy to your business goals, target audience, and budget.',
+    'service.s1.title': 'AI & Machine Learning',
+    'service.s1.desc': 'Custom neural networks, LLM integration, and predictive analytics that transform raw data into actionable intelligence.',
+    'service.s2.title': 'Cloud Infrastructure',
+    'service.s2.desc': 'Multi-cloud architecture, serverless pipelines, and auto-scaling systems designed for zero-downtime performance.',
+    'service.s3.title': 'Cybersecurity',
+    'service.s3.desc': 'Zero-trust frameworks, penetration testing, and real-time threat detection to keep your assets impenetrable.',
+    'service.s4.title': 'Software Development',
+    'service.s4.desc': 'Full-stack applications, microservices, and API ecosystems built with modern frameworks and clean architecture.',
+    'service.s5.title': 'IoT & Edge Computing',
+    'service.s5.desc': 'Connected device networks and edge processing solutions that bring computation closer to the source.',
+    'service.s6.title': 'Data Analytics',
+    'service.s6.desc': 'Big data pipelines, real-time dashboards, and business intelligence platforms that drive smarter decisions.',
+    'testimonial.label': 'Client Voices',
+    'testimonial.title': 'Testimonial',
+    'testimonial.desc': 'Hear from businesses that transformed their online presence and revenue with our digital marketing strategies.',
+    'testimonial.t1.quote': '"Black Technology transformed our cloud infrastructure. Their team delivered a scalable platform that cut our deployment time by 60%."',
+    'testimonial.t1.name': 'James Chen',
+    'testimonial.t1.role': 'CTO, Nexus Digital',
+    'testimonial.t2.quote': '"Their AI integration was seamless. We now process data 10x faster with predictive insights that drive real business decisions."',
+    'testimonial.t2.name': 'Sarah Mitchell',
+    'testimonial.t2.role': 'CEO, DataFlow Inc',
+    'testimonial.t3.quote': '"Outstanding cybersecurity work. Black Technology built a zero-trust system that gave us complete peace of mind."',
+    'testimonial.t3.name': 'David Park',
+    'testimonial.t3.role': 'Director, SecureNet Global',
+    'partnership.label': 'Trusted By',
+    'partnership.title': 'Partnership',
+    'partnership.desc': 'We partner with leading platforms and technology providers to deliver cutting-edge marketing solutions for our clients worldwide.',
+    'partnership.p1': 'Microsoft Azure',
+    'partnership.p2': 'Amazon AWS',
+    'partnership.p3': 'Google Cloud',
+    'partnership.p4': 'NVIDIA',
+    'partnership.p5': 'Cisco',
+    'partnership.p6': 'Oracle',
+    'partnership.note': 'Interested in partnering with us? We welcome collaborations with agencies, platforms, and businesses looking to expand their digital marketing capabilities.',
+    'partnership.cta': 'Become a Partner',
+    'graphic.label': 'Visual Design',
+    'graphic.title': 'Graphic',
+    'graphic.desc': 'Stunning visuals, brand identities, social media creatives, and marketing assets that capture attention and drive engagement across all digital platforms.',
+    'graphic.g1.cat': 'Brand Identity',
+    'graphic.g1.title': 'Neon Brand System',
+    'graphic.g1.desc': 'Complete visual identity with logo, color palette, and typography for a cyber-tech startup.',
+    'graphic.g2.cat': 'UI Design',
+    'graphic.g2.title': 'Dark Dashboard UI',
+    'graphic.g2.desc': 'Futuristic admin panel with data visualization, dark mode, and neon accent elements.',
+    'graphic.g3.cat': 'Motion Graphic',
+    'graphic.g3.title': 'Tech Intro Animation',
+    'graphic.g3.desc': 'Dynamic motion graphics and particle effects for product launch videos.',
+    'graphic.g4.cat': '3D Render',
+    'graphic.g4.title': 'Holographic Product',
+    'graphic.g4.desc': 'Photorealistic 3D renders and holographic product visualizations for marketing.',
+    'graphic.g5.cat': 'Web Graphic',
+    'graphic.g5.title': 'Landing Page Assets',
+    'graphic.g5.desc': 'Custom icons, illustrations, and hero graphics for high-converting web experiences.',
+    'faq.label': 'FAQ',
+    'faq.title': 'Frequently Asked Questions',
+    'faq.desc': 'Everything you need to know about our digital marketing services, pricing, process, and how we help businesses grow online.',
+    'faq.q1': 'What services does Technology offer?',
+    'faq.a1': 'We provide AI & machine learning, cloud infrastructure, cybersecurity, graphic design, and custom software development tailored to your business needs.',
+    'faq.q2': 'How long does a typical project take?',
+    'faq.a2': 'Timelines vary by scope — a branding project may take 2–4 weeks, while enterprise cloud or AI solutions typically run 2–6 months. We provide a detailed timeline after the initial consultation.',
+    'faq.q3': 'Do you offer ongoing support and maintenance?',
+    'faq.a3': 'Yes. We offer 24/7 monitoring, security updates, performance optimization, and dedicated support plans to keep your systems running smoothly after launch.',
+    'faq.q4': 'What industries do you work with?',
+    'faq.a4': 'We serve clients across finance, healthcare, e-commerce, manufacturing, and startups — from Fortune 500 companies to early-stage ventures in Myanmar and beyond.',
+    'faq.q5': 'How do I get started?',
+    'faq.a5': "Simply reach out via our contact form or email. We'll schedule a free discovery call to understand your goals and propose a tailored solution.",
+    'faq.q6': 'Can you integrate with our existing systems?',
+    'faq.a6': 'Absolutely. We specialize in seamless integration with legacy systems, third-party APIs, and multi-cloud environments without disrupting your operations.',
+    'terminal.command': 'blacktech --status',
+    'terminal.systems_label': '├── systems: ',
+    'terminal.uptime_label': '├── uptime: ',
+    'terminal.nodes_label': '├── active_nodes: ',
+    'terminal.threat_label': '└── threat_level: ',
+    'footer.rights': '© 2026 Technology. All rights reserved.',
+    'footer.privacy': 'Privacy',
+    'footer.terms': 'Terms',
+    'footer.admin': 'Admin Panel',
+    'footer.home': 'Back to Home',
+    'contact.label': 'Get In Touch',
+    'contact.title': 'Contact <span class="gradient-text">Us</span>',
+    'contact.desc': 'Ready to grow your business online? Tell us about your goals and we will craft a custom digital marketing strategy tailored to your brand. We respond within 24 hours.',
+    'contact.email': 'Email',
+    'contact.email.desc': 'Send us an email anytime',
+    'contact.phone': 'Phone',
+    'contact.phone.desc': 'Mon–Fri, 9am–6pm',
+    'contact.office': 'Office',
+    'contact.office.desc': 'Yangon, Myanmar',
+    'contact.office.addr': 'Tech Innovation Hub, Floor 12',
+    'contact.follow': 'Follow Us',
+    'contact.form.title': 'Send a Message',
+    'contact.form.desc': 'Fill out the form below and our team will get back to you shortly.',
+    'contact.form.name': 'Your Name',
+    'contact.form.email': 'Email Address',
+    'contact.form.phone': 'Phone Number',
+    'contact.form.subject': 'Subject',
+    'contact.form.message': 'Message',
+    'contact.form.submit': 'Send Message',
+    'contact.form.topic': 'Select a topic',
+    'contact.form.opt.ai': 'AI & Machine Learning',
+    'contact.form.opt.cloud': 'Cloud Infrastructure',
+    'contact.form.opt.security': 'Cybersecurity',
+    'contact.form.opt.graphic': 'Graphic Design',
+    'contact.form.opt.other': 'Other',
+    'contact.ph.name': 'John Doe',
+    'contact.ph.email': 'john@example.com',
+    'contact.ph.phone': '+95 9 XXX XXX XXX',
+    'contact.ph.message': 'Tell us about your project...',
+    'form.sending': 'Sending...',
+    'form.sent': 'Message Sent!',
+    'form.failed': 'Failed — try again',
+    'lang.btn': 'မြန်မာ',
+    'page.title': 'Technology | Future-Ready Tech Solutions',
+    'page.contact.title': 'Contact | Technology',
+  },
+  mm: {
+    'nav.home': 'ပင်မစာမျက်နှာ',
+    'nav.about': 'အကြောင်း',
+    'nav.service': 'ဝန်ဆောင်မှု',
+    'nav.graphic': 'ဂရပ်ဖစ်',
+    'nav.faq': 'FAQ',
+    'nav.contact': 'ဆက်သွယ်ရန်',
+    'hero.badge': 'Digital Growth Experts',
+    'hero.title1': 'TECH',
+    'hero.title2': 'NOLOGY',
+    'hero.desc': 'SEO၊ social media marketing၊ paid advertising၊ content strategy နှင့် conversion-focused web design ဖြင့် brand များကို online တွင် ကြီးထွားစေပါသည်။ Strategy မှ execution အထိ click များကို customer အဖြစ် ပြောင်းလဲပြီး data ကို ဆုံးဖြတ်ချက်အဖြစ် အသုံးချပေးပါသည်။',
+    'hero.cta1': 'ပရောဂျက် စတင်ရန်',
+    'hero.cta2': 'ဝန်ဆောင်မှု ကြည့်ရန်',
+    'hero.stat1': 'ပြီးစီးသော ပရောဂျက်များ',
+    'hero.stat2': 'Uptime SLA',
+    'hero.stat3': 'ကမ္ဘာ့ ဖောက်သည်များ',
+    'hero.tag1': 'AI Core',
+    'hero.tag2': 'Cloud Edge',
+    'hero.tag3': 'လုံခြုံ',
+    'about.label': 'ကျွန်ုပ်တို့ အကြောင်း',
+    'about.title': 'Digital Excellence ဖြင့် Brand များ ကြီးထွားစေခြင်း',
+    'about.p1': 'Technology သည် ရန်ကုန်မြို့တွင် တည်ထောင်ထားသော full-service digital agency တစ်ခုဖြစ်ပါသည်။ လုပ်ငန်းအရွယ်အစားမရွေး online presence တည်ဆောက်ရန်၊ targeted traffic ဆွဲယူရန်နှင့် visitor များကို loyal customer အဖြစ် ပြောင်းလဲရန် ကူညီပေးပါသည်။',
+    'about.p2': 'ကျွန်ုပ်တို့၏ strategist များ၊ content creator များ၊ designer များနှင့် analyst များသည် creative ဖြစ်ပြီး data-backed campaign များ ပေးအပ်ရန် ပူးပေါင်းလုပ်ဆောင်ပါသည်။ marketing dollar တိုင်းကို တိုင်းတာနိုင်သင့်သည်ဟု ယုံကြည်ပါသည်။',
+    'about.p3': 'Google တွင် အဆင့်မြှင့်တင်လိုခြင်း၊ social media follower တိုးလိုခြင်း၊ paid ad campaign စတင်လိုခြင်း သို့မဟုတ် website redesign လိုခြင်း — ကျွန်ုပ်တို့တွင် expertise နှင့် tools များ ရှိပါသည်။',
+    'about.founded': 'တည်ထောင်သည့်နှစ်',
+    'about.engineers': 'အင်ဂျင်နီယာများ',
+    'about.countries': 'နိုင်ငံများ',
+    'about.support': 'အကူအညီ',
+    'about.ai': 'AI လုပ်ဆောင်မှု',
+    'about.network': 'ကွန်ရက် ဝန်တင်',
+    'about.security': 'လုံခြုံရေး အမှတ်',
+    'service.label': 'ကျွန်ုပ်တို့ လုပ်ငန်း',
+    'service.title': 'ဝန်ဆောင်မှုများ',
+    'service.desc': 'visibility၊ engagement နှင့် revenue တိုးမြှင့်ရန် ဒီဇိုင်းထုတ်ထားသော digital marketing ဝန်ဆောင်မှုများ။',
+    'service.s1.title': 'AI နှင့် Machine Learning',
+    'service.s1.desc': 'စိတ်ကြိုက် neural network များ၊ LLM ပေါင်းစပ်မှုနှင့် ခန့်မှန်းချက် analytics ဖြင့် ဒေတာကို အသုံးဝင်သော အချက်အလက်အဖြစ် ပြောင်းပါသည်။',
+    'service.s2.title': 'Cloud Infrastructure',
+    'service.s2.desc': 'Multi-cloud architecture၊ serverless pipeline များနှင့် အလိုအလျောက် scale လုပ်သော စနစ်များ။',
+    'service.s3.title': 'Cybersecurity',
+    'service.s3.desc': 'Zero-trust framework၊ penetration testing နှင့် real-time ခြိမ်းခြောက်မှု ရှာဖွေခြင်း။',
+    'service.s4.title': 'Software Development',
+    'service.s4.desc': 'Full-stack application များ၊ microservice များနှင့် API ecosystem များ။',
+    'service.s5.title': 'IoT & Edge Computing',
+    'service.s5.desc': 'ချိတ်ဆက်ထားသော device network များနှင့် edge processing ဖြေရှင်းနည်းများ။',
+    'service.s6.title': 'Data Analytics',
+    'service.s6.desc': 'Big data pipeline များ၊ real-time dashboard များနှင့် business intelligence platform များ။',
+    'testimonial.label': 'ဖောက်သည်များ၏ အမြင်များ',
+    'testimonial.title': 'သုံးသပ်ချက်',
+    'testimonial.desc': 'ကျွန်ုပ်တို့၏ digital marketing strategy များဖြင့် online presence နှင့် revenue ကို ပြောင်းလဲခဲ့သော လုပ်ငန်းများ၏ အမြင်များ။',
+    'testimonial.t1.quote': '"Black Technology က ကျွန်ုပ်တို့၏ cloud infrastructure ကို ပြောင်းလဲပေးခဲ့သည်။ သူတို့အဖွဲ့က deployment အချိန်ကို ၆၀% လျှော့ချပေးနိုင်သော scalable platform တစ်ခု ပေးခဲ့သည်။"',
+    'testimonial.t1.name': 'James Chen',
+    'testimonial.t1.role': 'CTO, Nexus Digital',
+    'testimonial.t2.quote': '"သူတို့၏ AI ပေါင်းစပ်မှုသည် ချောမွေ့ခဲ့သည်။ ယခု ဒေတာကို ၁၀ ဆ ပိုမြန်စွာ လုပ်ဆောင်နိုင်ပြီး စီးပွားရေးဆုံးဖြတ်ချက်များကို ဦးတည်စေသော ခန့်မှန်းချက်များ ရရှိပါသည်။"',
+    'testimonial.t2.name': 'Sarah Mitchell',
+    'testimonial.t2.role': 'CEO, DataFlow Inc',
+    'testimonial.t3.quote': '"ထူးချွန်သော cybersecurity လုပ်ငန်း။ Black Technology က ကျွန်ုပ်တို့ကို စိတ်ချရစေသော zero-trust စနစ်တစ်ခု တည်ဆောက်ပေးခဲ့သည်။"',
+    'testimonial.t3.name': 'David Park',
+    'testimonial.t3.role': 'Director, SecureNet Global',
+    'partnership.label': 'ယုံကြည်စိတ်ချရသော',
+    'partnership.title': 'ပူးပေါင်းဆောင်ရွက်မှု',
+    'partnership.desc': 'ကမ္ဘာ့အဆင့်မီ နည်းပညာ ဖြေရှင်းနည်းများ ပေးအပ်ရန် လုပ်ငန်းခေါင်းဆောင်များနှင့် ပူးပေါင်းဆောင်ရွက်ပါသည်။',
+    'partnership.p1': 'Microsoft Azure',
+    'partnership.p2': 'Amazon AWS',
+    'partnership.p3': 'Google Cloud',
+    'partnership.p4': 'NVIDIA',
+    'partnership.p5': 'Cisco',
+    'partnership.p6': 'Oracle',
+    'partnership.note': 'ကျွန်ုပ်တို့နှင့် ပူးပေါင်းဆောင်ရွက်လိုပါသလား။ Cloud၊ AI နှင့် enterprise ဖြေရှင်းနည်းများတွင် ပူးပေါင်းဆောင်ရွက်မှုအခွင့်အလမ်းများကို ဆက်သွယ်မေးမြန်းပါ။',
+    'partnership.cta': 'ပူးပေါင်းဖော်ဖြစ်ရန်',
+    'graphic.label': 'Visual Design',
+    'graphic.title': 'ဂရပ်ဖစ်',
+    'graphic.desc': 'နောက်မျိုးဆက် နည်းပညာအတွက် ရဲရင့်သော visual များ၊ brand identity များနှင့် digital art များ။',
+    'graphic.g1.cat': 'Brand Identity',
+    'graphic.g1.title': 'Neon Brand System',
+    'graphic.g1.desc': 'Cyber-tech startup အတွက် logo၊ color palette နှင့် typography ပါဝင်သော visual identity။',
+    'graphic.g2.cat': 'UI Design',
+    'graphic.g2.title': 'Dark Dashboard UI',
+    'graphic.g2.desc': 'Data visualization၊ dark mode နှင့် neon accent ပါဝင်သော admin panel။',
+    'graphic.g3.cat': 'Motion Graphic',
+    'graphic.g3.title': 'Tech Intro Animation',
+    'graphic.g3.desc': 'Product launch video များအတွက် motion graphic နှင့် particle effect များ။',
+    'graphic.g4.cat': '3D Render',
+    'graphic.g4.title': 'Holographic Product',
+    'graphic.g4.desc': 'Photorealistic 3D render နှင့် holographic product visualization များ။',
+    'graphic.g5.cat': 'Web Graphic',
+    'graphic.g5.title': 'Landing Page Assets',
+    'graphic.g5.desc': 'High-converting web experience များအတွက် icon၊ illustration နှင့် hero graphic များ။',
+    'faq.label': 'FAQ',
+    'faq.title': 'မေးလေ့ရှိသော မေးခွန်းများ',
+    'faq.desc': 'ကျွန်ုပ်တို့၏ ဝန်ဆောင်မှုများ၊ လုပ်ငန်းစဉ်နှင့် သင့်လုပ်ငန်းကို ကူညီပေးနိုင်ပုံ အကြောင်း အဖြေများ။',
+    'faq.q1': 'Technology မှာ ဘယ်ဝန်ဆောင်မှုများ ပေးပါသလဲ?',
+    'faq.a1': 'AI နှင့် machine learning၊ cloud infrastructure၊ cybersecurity၊ graphic design နှင့် သင့်လုပ်ငန်းလိုအပ်ချက်အတွက် custom software development များ ပေးပါသည်။',
+    'faq.q2': 'ပုံမှန် ပရောဂျက်တစ်ခု ဘယ်လောက်ကြာမလဲ?',
+    'faq.a2': 'အချိန်ကာလသည် project scope ပေါ်မူတည်ပါသည် — branding project သည် ၂–၄ ပတ်ကြာနိုင်ပြီး enterprise cloud သို့မဟုတ် AI solution များသည် ၂–၆ လ ကြာနိုင်ပါသည်။ အစပြု consultation ပြီးနောက် အသေးစိတ် timeline ပေးပါသည်။',
+    'faq.q3': 'ongoing support နှင့် maintenance ပေးပါသလား?',
+    'faq.a3': 'ပေးပါသည်။ 24/7 monitoring၊ security update များ၊ performance optimization နှင့် dedicated support plan များဖြင့် launch ပြီးနောက် system များ ချောမွေ့စွာ လည်ပတ်နိုင်အောင် ကူညီပါသည်။',
+    'faq.q4': 'ဘယ်လုပ်ငန်းများ နှင့် အလုပ်လုပ်ပါသလဲ?',
+    'faq.a4': 'finance၊ healthcare、e-commerce、manufacturing နှင့် startup များအပါအဝင် Fortune 500 ကုမ္ပဏီများမှ early-stage venture များအထိ မြန်မာနိုင်ငံနှင့် နိုင်ငံတကာတွင် ဝန်ဆောင်မှုပေးပါသည်။',
+    'faq.q5': 'ဘယ်လို စတင်ရမလဲ?',
+    'faq.a5': 'contact form သို့မဟုတ် email ဖြင့် ဆက်သွယ်ပါ။ သင့်ရည်မှန်းချက်များကို နားလည်ရန် free discovery call ချိန်းဆိုပြီး သင့်လျော်သော solution ကို အဆိုပြုပါမည်။',
+    'faq.q6': 'ကျွန်ုပ်တို့၏ existing system များနှင့် ပေါင်းစပ်နိုင်ပါသလား?',
+    'faq.a6': 'ပေါင်းစပ်နိုင်ပါသည်။ legacy system များ၊ third-party API များနှင့် multi-cloud environment များနှင့် လုပ်ငန်းကို disruption ဖြစ်စေဘဲ seamless integration လုပ်ဆောင်နိုင်ပါသည်။',
+    'terminal.command': 'blacktech --status',
+    'terminal.systems_label': '├── systems: ',
+    'terminal.uptime_label': '├── uptime: ',
+    'terminal.nodes_label': '├── active_nodes: ',
+    'terminal.threat_label': '└── threat_level: ',
+    'footer.rights': '© 2026 Technology. မူပိုင်ခွင့်များ ရယူထားပါသည်။',
+    'footer.privacy': 'ကိုယ်ရေးအချက်အလက်',
+    'footer.terms': 'စည်းမျဉ်းများ',
+    'footer.admin': 'Admin Panel',
+    'footer.home': 'ပင်မစာမျက်နှာ',
+    'contact.label': 'ဆက်သွယ်ရန်',
+    'contact.title': '<span class="gradient-text">ဆက်သွယ်ပါ</span>',
+    'contact.desc': 'ပရောဂျက်တစ်ခု ရှိပါသလား။ သင့်ထံမှ ကြားလိုပါသည်။ မက်ဆေ့ချ်ပို့ပါ၊ ၂၄ နာရီအတွင်း ပြန်လည်ဖြေကြားပါမည်။',
+    'contact.email': 'အီးမေးလ်',
+    'contact.email.desc': 'အချိန်မရွေး အီးမေးလ်ပို့နိုင်ပါသည်',
+    'contact.phone': 'ဖုန်း',
+    'contact.phone.desc': 'တနင်္လာ–သောကြာ၊ ၉နာရီ–၆နာရီ',
+    'contact.office': 'ရုံးခန်း',
+    'contact.office.desc': 'ရန်ကုန်၊ မြန်မာ',
+    'contact.office.addr': 'Tech Innovation Hub, အထပ် ၁၂',
+    'contact.follow': 'Follow လုပ်ပါ',
+    'contact.form.title': 'မက်ဆေ့ချ် ပို့ရန်',
+    'contact.form.desc': 'အောက်ပါ form ကို ဖြည့်ပါ၊ ကျွန်ုပ်တို့ အဖွဲ့က မကြာမီ ပြန်လည်ဆက်သွယ်ပါမည်။',
+    'contact.form.name': 'အမည်',
+    'contact.form.email': 'အီးမေးလ်',
+    'contact.form.phone': 'ဖုန်းနံပါတ်',
+    'contact.form.subject': 'ခေါင်းစဉ်',
+    'contact.form.message': 'မက်ဆေ့ချ်',
+    'contact.form.submit': 'မက်ဆေ့ချ် ပို့မည်',
+    'contact.form.topic': 'ခေါင်းစဉ် ရွေးပါ',
+    'contact.form.opt.ai': 'AI & Machine Learning',
+    'contact.form.opt.cloud': 'Cloud Infrastructure',
+    'contact.form.opt.security': 'Cybersecurity',
+    'contact.form.opt.graphic': 'Graphic Design',
+    'contact.form.opt.other': 'အခြား',
+    'contact.ph.name': 'သင့်အမည်',
+    'contact.ph.email': 'email@example.com',
+    'contact.ph.phone': '+95 9 XXX XXX XXX',
+    'contact.ph.message': 'ပရောဂျက်အကြောင်း ပြောပြပါ...',
+    'form.sending': 'ပို့နေသည်...',
+    'form.sent': 'မက်ဆေ့ချ် ပို့ပြီးပါပြီ!',
+    'form.failed': 'မအောင်မြင် — ထပ်စမ်းပါ',
+    'lang.btn': 'English',
+    'page.title': 'Technology | နည်းပညာ ဖြေရှင်းနည်းများ',
+    'page.contact.title': 'ဆက်သွယ်ရန် | Technology',
+  },
+}
+
+function getLang() {
+  return localStorage.getItem('lang') || 'en'
+}
+
+function t(key) {
+  const lang = getLang()
+  return translations[lang]?.[key] ?? translations.en[key] ?? key
+}
+
+function setLang(lang) {
+  localStorage.setItem('lang', lang)
+  document.documentElement.lang = lang === 'mm' ? 'my' : 'en'
+  applyTranslations()
+  updateLangButtons()
+}
+
+function toggleLang() {
+  setLang(getLang() === 'en' ? 'mm' : 'en')
+}
+
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    el.textContent = t(el.dataset.i18n)
+  })
+  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+    el.innerHTML = t(el.dataset.i18nHtml)
+  })
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    el.placeholder = t(el.dataset.i18nPlaceholder)
+  })
+  document.querySelectorAll('select option[data-i18n]').forEach((el) => {
+    el.textContent = t(el.dataset.i18n)
+  })
+  const titleKey = document.body.dataset.pageTitle
+  if (titleKey) document.title = t(titleKey)
+}
+
+function updateLangButtons() {
+  document.querySelectorAll('.lang-toggle-btn').forEach((btn) => {
+    btn.textContent = t('lang.btn')
+    btn.setAttribute('aria-label', getLang() === 'en' ? 'Switch to Myanmar' : 'Switch to English')
+  })
+}
+
+document.querySelectorAll('.lang-toggle-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+    toggleLang()
+    if (window.siteData) {
+      renderServices(window.siteData.services)
+      renderGraphics(window.siteData.graphics)
+      renderTestimonials(window.siteData.testimonials)
+      renderPartners(window.siteData.partners)
+      renderFaqs(window.siteData.faqs)
+      renderFormOptions(window.siteData.form_options)
+    }
+  })
+})
+
+function initI18n() {
+  applyTranslations()
+  updateLangButtons()
+}
+
+window.t = t
+window.getLang = getLang
+window.initI18n = initI18n
+window.applyTranslations = applyTranslations

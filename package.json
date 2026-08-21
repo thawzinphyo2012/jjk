@@ -1,0 +1,9 @@
+{
+  "name": "black-technology",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Black Technology — futuristic tech company website built with Tailwind CSS",
+  "scripts": {
+    "start": "npx --yes serve . -p 3000"
+  }
+}

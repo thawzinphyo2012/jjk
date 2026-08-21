@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme') || 'dark'
+        document.documentElement.classList.remove('dark', 'light')
+        document.documentElement.classList.add(t)
+      })()
+    </script>
+    <script>
+      (function () {
+        var l = localStorage.getItem('lang') || 'en'
+        document.documentElement.lang = l === 'mm' ? 'my' : 'en'
+      })()
+    </script>
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Technology — Pioneering the future with cutting-edge AI, cloud, and cybersecurity solutions." id="meta-description" />
+    <title>Technology | Future-Ready Tech Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              void: '#030303',
+              obsidian: '#0a0a0a',
+              charcoal: '#141414',
+              steel: '#1a1a1a',
+              neon: '#00f0ff',
+            },
+            fontFamily: {
+              display: ['Orbitron', 'system-ui', 'sans-serif'],
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="antialiased overflow-x-hidden" data-page-title="page.title" data-page="home">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+          <div class="logo-3d w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-violet-600 flex items-center justify-center glow-box logo-pulse">
+            <span class="font-display font-bold text-black text-xs sm:text-sm" data-setting="brand_logo">T</span>
+          </div>
+          <span class="nav-brand-text font-display font-bold text-lg tracking-wider text-white group-hover:text-cyan-400 transition-colors" data-setting-html="brand_name">
+            TECH<span class="text-cyan-400">NOLOGY</span>
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-6 lg:gap-8">
+          <a href="#home" class="nav-link text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav.home">Home</a>
+          <a href="#about" class="nav-link text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav.about">About</a>
+          <a href="#service" class="nav-link text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav.service">Service</a>
+          <a href="#graphic" class="nav-link text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav.graphic">Graphic</a>
+          <a href="#faq" class="nav-link text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav.faq">FAQ</a>
+          <a href="contact.html" class="nav-link text-sm text-gray-400 hover:text-white transition-colors" data-i18n="nav.contact">Contact</a>
+          <button class="lang-toggle-btn" type="button">မြန်မာ</button>
+          <button class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+            <svg class="icon-sun hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-1.5 sm:gap-2 md:hidden">
+          <button class="lang-toggle-btn" type="button">မြန်မာ</button>
+          <button class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+            <svg class="icon-sun hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <button id="menu-btn" class="text-white p-2" aria-label="Toggle menu">
+            <svg class="icon-menu w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg class="icon-close w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-obsidian/95 backdrop-blur-xl max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div class="px-4 sm:px-6 py-6 flex flex-col gap-1">
+          <a href="#home" class="py-3 px-4 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-base" data-i18n="nav.home">Home</a>
+          <a href="#about" class="py-3 px-4 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-base" data-i18n="nav.about">About</a>
+          <a href="#service" class="py-3 px-4 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-base" data-i18n="nav.service">Service</a>
+          <a href="#graphic" class="py-3 px-4 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-base" data-i18n="nav.graphic">Graphic</a>
+          <a href="#faq" class="py-3 px-4 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-base" data-i18n="nav.faq">FAQ</a>
+          <a href="contact.html" class="py-3 px-4 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-base" data-i18n="nav.contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="scene-3d relative min-h-screen min-h-[100dvh] flex items-center grid-bg grid-bg-animated overflow-hidden">
+      <canvas id="particle-canvas" aria-hidden="true"></canvas>
+      <canvas id="three-canvas" data-three-scene aria-hidden="true"></canvas>
+      <div class="absolute inset-0 bg-gradient-to-b from-cyan-400/5 via-transparent to-violet-600/5 pointer-events-none z-[2]"></div>
+      <div class="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-pulse-glow parallax-orb z-[2]"></div>
+      <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl animate-pulse-glow parallax-orb z-[2]"></div>
+
+      <div class="hero-3d-layer relative z-[3] max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-12 sm:pb-20 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full neon-border bg-cyan-400/5 text-cyan-400 text-xs font-medium tracking-widest uppercase mb-4 sm:mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span data-i18n="hero.badge">Next-Gen Technology</span>
+          </div>
+          <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4 sm:mb-6">
+            <span class="text-white" data-i18n="hero.title1">TECH</span><br />
+            <span class="gradient-text glow-text" data-i18n="hero.title2">NOLOGY</span>
+          </h1>
+          <p class="text-gray-400 text-base sm:text-lg md:text-xl max-w-lg mx-auto lg:mx-0 leading-relaxed mb-6 sm:mb-8" data-i18n="hero.desc">
+            We engineer the invisible — AI systems, quantum-ready infrastructure, and cyber defense that powers tomorrow's enterprises today.
+          </p>
+          <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
+            <a href="contact.html" class="btn-shine btn-3d btn-3d-primary px-6 sm:px-8 py-3 sm:py-3.5 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-all hover:shadow-lg hover:shadow-cyan-400/25 text-center" data-i18n="hero.cta1">
+              Start a Project
+            </a>
+            <a href="#service" class="btn-shine btn-3d btn-3d-outline px-6 sm:px-8 py-3 sm:py-3.5 neon-border text-white font-medium rounded-lg hover:bg-white/5 transition-all text-center" data-i18n="hero.cta2">
+              Explore Service
+            </a>
+          </div>
+
+          <div class="hero-stats flex gap-4 sm:gap-10 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/5 justify-center lg:justify-start">
+            <div>
+              <div id="hero-stat-1" class="font-display text-2xl sm:text-3xl font-bold text-cyan-400" data-count="150" data-suffix="+">0+</div>
+              <div class="text-xs sm:text-sm text-gray-500 mt-1" data-i18n="hero.stat1">Projects Delivered</div>
+            </div>
+            <div>
+              <div id="hero-stat-2" class="font-display text-2xl sm:text-3xl font-bold text-cyan-400" data-count="99.9" data-suffix="%" data-decimals="1">0%</div>
+              <div class="text-xs sm:text-sm text-gray-500 mt-1" data-i18n="hero.stat2">Uptime SLA</div>
+            </div>
+            <div>
+              <div id="hero-stat-3" class="font-display text-2xl sm:text-3xl font-bold text-cyan-400" data-count="40" data-suffix="+">0+</div>
+              <div class="text-xs sm:text-sm text-gray-500 mt-1" data-i18n="hero.stat3">Global Clients</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex lg:hidden flex-col justify-center items-center py-4 pb-10">
+          <div class="relative w-48 h-48 sm:w-64 sm:h-64 animate-float">
+            <div class="absolute inset-0 rounded-full border border-cyan-400/20 spin-slow"></div>
+            <div class="absolute inset-4 rounded-full border border-violet-500/20 spin-reverse"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="hero-media w-20 h-20 sm:w-24 sm:h-24 glow-box">
+                <img data-setting-src="hero_image" src="images/hero.jpg" alt="Technology" class="media-img" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div class="mobile-hero-tags lg:hidden">
+            <span class="mobile-hero-tag text-cyan-400" data-i18n="hero.tag1">SEO</span>
+            <span class="mobile-hero-tag text-violet-400" data-i18n="hero.tag2">Social</span>
+            <span class="mobile-hero-tag text-green-400" data-i18n="hero.tag3">Ads</span>
+          </div>
+        </div>
+
+        <div class="relative hidden lg:flex justify-center items-center">
+          <div class="relative w-80 h-80 animate-float">
+            <div class="absolute inset-0 rounded-full border border-cyan-400/20 spin-slow"></div>
+            <div class="absolute inset-4 rounded-full border border-violet-500/20 spin-reverse"></div>
+            <div class="absolute inset-8 rounded-full border border-cyan-400/30"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="hero-media hero-media-lg glow-box">
+                <img data-setting-src="hero_image" src="images/hero.jpg" alt="Black Technology" class="media-img" loading="lazy" />
+              </div>
+            </div>
+            <div class="absolute -top-4 right-8 px-3 py-1.5 rounded-lg bg-charcoal neon-border text-xs text-cyan-400 font-mono" data-i18n="hero.tag1">AI Core</div>
+            <div class="absolute bottom-4 -left-4 px-3 py-1.5 rounded-lg bg-charcoal neon-border text-xs text-violet-400 font-mono" data-i18n="hero.tag2">Cloud Edge</div>
+            <div class="absolute top-1/2 -right-8 px-3 py-1.5 rounded-lg bg-charcoal neon-border text-xs text-green-400 font-mono" data-i18n="hero.tag3">Secure</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section-pad py-16 sm:py-24 grid-bg grid-bg-animated">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div>
+            <span class="text-cyan-400 text-sm font-medium tracking-widest uppercase" data-i18n="about.label">Who We Are</span>
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-4 sm:mb-6" data-i18n="about.title">Engineering the Future, Silently</h2>
+            <p class="text-gray-400 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base" data-i18n="about.p1">
+              Founded on the belief that the most powerful technology should be invisible, Black Technology operates at the intersection of innovation and reliability. Our team of engineers, researchers, and strategists work in the shadows to build systems that define industries.
+            </p>
+            <p class="text-gray-400 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base" data-i18n="about.p2">
+              From Fortune 500 enterprises to ambitious startups, we deliver solutions that don't just meet expectations — they redefine what's possible.
+            </p>
+            <p class="text-gray-400 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base" data-i18n="about.p3">
+              Our data-driven strategies combine SEO, social media, paid advertising, and content marketing to help brands reach the right audience, generate qualified leads, and achieve measurable ROI across every digital channel.
+            </p>
+            <div class="grid grid-cols-2 gap-3 sm:gap-4">
+              <div class="p-3 sm:p-4 rounded-xl bg-charcoal/50 neon-border">
+                <div class="stat-icon-wrap mb-2">
+                  <img data-setting-src="icon_about_founded" src="images/icon-founded.jpg" alt="" class="stat-icon" loading="lazy" />
+                </div>
+                <div class="font-display text-xl sm:text-2xl font-bold text-white" data-setting="about_founded">2018</div>
+                <div class="text-xs sm:text-sm text-gray-500" data-i18n="about.founded">Founded</div>
+              </div>
+              <div class="p-3 sm:p-4 rounded-xl bg-charcoal/50 neon-border">
+                <div class="stat-icon-wrap mb-2">
+                  <img data-setting-src="icon_about_engineers" src="images/icon-engineers.jpg" alt="" class="stat-icon" loading="lazy" />
+                </div>
+                <div class="font-display text-xl sm:text-2xl font-bold text-white" data-setting="about_engineers">50+</div>
+                <div class="text-xs sm:text-sm text-gray-500" data-i18n="about.engineers">Engineers</div>
+              </div>
+              <div class="p-3 sm:p-4 rounded-xl bg-charcoal/50 neon-border">
+                <div class="stat-icon-wrap mb-2">
+                  <img data-setting-src="icon_about_countries" src="images/icon-global.jpg" alt="" class="stat-icon" loading="lazy" />
+                </div>
+                <div class="font-display text-xl sm:text-2xl font-bold text-white" data-setting="about_countries">12</div>
+                <div class="text-xs sm:text-sm text-gray-500" data-i18n="about.countries">Countries</div>
+              </div>
+              <div class="p-3 sm:p-4 rounded-xl bg-charcoal/50 neon-border">
+                <div class="stat-icon-wrap mb-2">
+                  <img data-setting-src="icon_about_support" src="images/icon-support.jpg" alt="" class="stat-icon" loading="lazy" />
+                </div>
+                <div class="font-display text-xl sm:text-2xl font-bold text-white" data-setting="about_support">24/7</div>
+                <div class="text-xs sm:text-sm text-gray-500" data-i18n="about.support">Support</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative mt-6 lg:mt-0">
+            <div class="about-media-wrap aspect-square neon-border glow-box p-5 sm:p-8 flex flex-col justify-between">
+              <img data-setting-src="about_image" src="images/about.jpg" alt="Black Technology Team" class="about-bg" loading="lazy" />
+              <div class="about-overlay font-mono text-xs text-gray-500 terminal-type">
+                <div class="terminal-line"><span class="text-green-400">$</span> <span data-i18n="terminal.command">blacktech --status</span></div>
+                <div class="terminal-line"><span class="text-gray-600" data-i18n="terminal.systems_label">├── systems: </span><span class="text-cyan-400" data-setting="terminal_systems">operational</span></div>
+                <div class="terminal-line"><span class="text-gray-600" data-i18n="terminal.uptime_label">├── uptime: </span><span class="text-cyan-400" data-setting="terminal_uptime">99.97%</span></div>
+                <div class="terminal-line"><span class="text-gray-600" data-i18n="terminal.nodes_label">├── active_nodes: </span><span class="text-cyan-400" data-setting="terminal_nodes">847</span></div>
+                <div class="terminal-line"><span class="text-gray-600" data-i18n="terminal.threat_label">└── threat_level: </span><span class="text-green-400" data-setting="terminal_threat">minimal</span></div>
+              </div>
+              <div class="about-overlay space-y-3">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-400" data-i18n="about.ai">AI Processing</span>
+                  <span class="text-cyan-400" data-setting="about_ai">87</span>%
+                </div>
+                <div class="h-1.5 rounded-full bg-steel overflow-hidden"><div class="progress-fill h-full bg-gradient-to-r from-cyan-400 to-violet-500 rounded-full" data-setting-width="about_ai" data-width="87"></div></div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-400" data-i18n="about.network">Network Load</span>
+                  <span class="text-cyan-400" data-setting="about_network">42</span>%
+                </div>
+                <div class="h-1.5 rounded-full bg-steel overflow-hidden"><div class="progress-fill h-full bg-gradient-to-r from-cyan-400 to-violet-500 rounded-full" data-setting-width="about_network" data-width="42"></div></div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-400" data-i18n="about.security">Security Score</span>
+                  <span class="text-green-400" data-setting="about_security">98</span>%
+                </div>
+                <div class="h-1.5 rounded-full bg-steel overflow-hidden"><div class="progress-fill h-full bg-gradient-to-r from-green-400 to-cyan-400 rounded-full" data-setting-width="about_security" data-width="98"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service -->
+    <section id="service" class="section-pad py-16 sm:py-24 bg-obsidian">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 sm:mb-16">
+          <span class="text-cyan-400 text-sm font-medium tracking-widest uppercase" data-i18n="service.label">What We Do</span>
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3" data-i18n="service.title">Our Service</h2>
+          <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base px-2" data-i18n="service.desc">End-to-end technology solutions built for scale, security, and the speed of innovation.</p>
+        </div>
+
+        <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div class="card-hover tilt-card p-5 sm:p-8 rounded-2xl bg-charcoal neon-border">
+            <div class="service-media"><img src="images/service-ai.jpg" alt="AI" class="media-img" loading="lazy" /></div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3" data-i18n="service.s1.title">AI & Machine Learning</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="service.s1.desc">Custom neural networks, LLM integration, and predictive analytics.</p>
+          </div>
+          <div class="card-hover tilt-card p-5 sm:p-8 rounded-2xl bg-charcoal neon-border">
+            <div class="service-media"><img src="images/service-cloud.jpg" alt="Cloud" class="media-img" loading="lazy" /></div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3" data-i18n="service.s2.title">Cloud Infrastructure</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="service.s2.desc">Multi-cloud architecture, serverless pipelines, and auto-scaling systems.</p>
+          </div>
+          <div class="card-hover tilt-card p-5 sm:p-8 rounded-2xl bg-charcoal neon-border">
+            <div class="service-media"><img src="images/service-security.jpg" alt="Security" class="media-img" loading="lazy" /></div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3" data-i18n="service.s3.title">Cybersecurity</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="service.s3.desc">Zero-trust frameworks, penetration testing, and real-time threat detection.</p>
+          </div>
+          <div class="card-hover tilt-card p-5 sm:p-8 rounded-2xl bg-charcoal neon-border">
+            <div class="service-media"><img src="images/service-dev.jpg" alt="Development" class="media-img" loading="lazy" /></div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3" data-i18n="service.s4.title">Software Development</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="service.s4.desc">Full-stack applications, microservices, and API ecosystems.</p>
+          </div>
+          <div class="card-hover tilt-card p-5 sm:p-8 rounded-2xl bg-charcoal neon-border">
+            <div class="service-media"><img src="images/service-iot.jpg" alt="IoT" class="media-img" loading="lazy" /></div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3" data-i18n="service.s5.title">IoT & Edge Computing</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="service.s5.desc">Connected device networks and edge processing solutions.</p>
+          </div>
+          <div class="card-hover tilt-card p-5 sm:p-8 rounded-2xl bg-charcoal neon-border">
+            <div class="service-media"><img src="images/service-data.jpg" alt="Data" class="media-img" loading="lazy" /></div>
+            <h3 class="font-display text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3" data-i18n="service.s6.title">Data Analytics</h3>
+            <p class="text-gray-400 text-sm leading-relaxed" data-i18n="service.s6.desc">Big data pipelines, real-time dashboards, and business intelligence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial & Partnership -->
+    <section class="section-pad py-16 sm:py-24 grid-bg grid-bg-animated">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+          <!-- Testimonials -->
+          <div id="testimonial">
+            <div class="mb-8 sm:mb-10">
+              <span class="text-cyan-400 text-sm font-medium tracking-widest uppercase" data-i18n="testimonial.label">Client Voices</span>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3" data-i18n="testimonial.title">Testimonial</h2>
+              <p class="text-gray-400 mt-3 text-sm sm:text-base" data-i18n="testimonial.desc">What our clients say about working with Black Technology.</p>
+            </div>
+
+            <div id="testimonials-list" class="space-y-4 sm:space-y-5">
+              <div class="testimonial-card p-5 sm:p-6 rounded-2xl bg-charcoal neon-border">
+                <div class="flex gap-1 mb-3 text-cyan-400">
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-4" data-i18n="testimonial.t1.quote">"Black Technology transformed our cloud infrastructure."</p>
+                <div class="flex items-center gap-3">
+                  <img src="images/testimonial-1.jpg" alt="James Chen" class="testimonial-avatar" loading="lazy" />
+                  <div>
+                    <p class="text-white font-medium text-sm" data-i18n="testimonial.t1.name">James Chen</p>
+                    <p class="text-gray-500 text-xs" data-i18n="testimonial.t1.role">CTO, Nexus Digital</p>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-card p-5 sm:p-6 rounded-2xl bg-charcoal neon-border">
+                <div class="flex gap-1 mb-3 text-cyan-400">
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-4" data-i18n="testimonial.t2.quote">"Their AI integration was seamless."</p>
+                <div class="flex items-center gap-3">
+                  <img src="images/testimonial-2.jpg" alt="Sarah Mitchell" class="testimonial-avatar" loading="lazy" />
+                  <div>
+                    <p class="text-white font-medium text-sm" data-i18n="testimonial.t2.name">Sarah Mitchell</p>
+                    <p class="text-gray-500 text-xs" data-i18n="testimonial.t2.role">CEO, DataFlow Inc</p>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-card p-5 sm:p-6 rounded-2xl bg-charcoal neon-border">
+                <div class="flex gap-1 mb-3 text-cyan-400">
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-4 h-4 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-4" data-i18n="testimonial.t3.quote">"Outstanding cybersecurity work."</p>
+                <div class="flex items-center gap-3">
+                  <img src="images/testimonial-3.jpg" alt="David Park" class="testimonial-avatar" loading="lazy" />
+                  <div>
+                    <p class="text-white font-medium text-sm" data-i18n="testimonial.t3.name">David Park</p>
+                    <p class="text-gray-500 text-xs" data-i18n="testimonial.t3.role">Director, SecureNet Global</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partnership -->
+          <div id="partnership">
+            <div class="mb-8 sm:mb-10">
+              <span class="text-cyan-400 text-sm font-medium tracking-widest uppercase" data-i18n="partnership.label">Trusted By</span>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3" data-i18n="partnership.title">Partnership</h2>
+              <p class="text-gray-400 mt-3 text-sm sm:text-base" data-i18n="partnership.desc">We collaborate with industry leaders to deliver world-class technology solutions.</p>
+            </div>
+
+            <div id="partners-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+              <div class="partner-badge"><img src="images/partner-cloud.jpg" alt="" class="partner-icon" loading="lazy" /><span data-i18n="partnership.p1">Microsoft Azure</span></div>
+              <div class="partner-badge"><img src="images/partner-aws.jpg" alt="" class="partner-icon" loading="lazy" /><span data-i18n="partnership.p2">Amazon AWS</span></div>
+              <div class="partner-badge"><img src="images/partner-google.jpg" alt="" class="partner-icon" loading="lazy" /><span data-i18n="partnership.p3">Google Cloud</span></div>
+              <div class="partner-badge"><img src="images/partner-nvidia.jpg" alt="" class="partner-icon" loading="lazy" /><span data-i18n="partnership.p4">NVIDIA</span></div>
+              <div class="partner-badge"><img src="images/partner-cisco.jpg" alt="" class="partner-icon" loading="lazy" /><span data-i18n="partnership.p5">Cisco</span></div>
+              <div class="partner-badge"><img src="images/partner-oracle.jpg" alt="" class="partner-icon" loading="lazy" /><span data-i18n="partnership.p6">Oracle</span></div>
+            </div>
+
+            <div class="mt-6 sm:mt-8 p-5 sm:p-6 rounded-2xl bg-charcoal neon-border">
+              <p class="text-gray-300 text-sm leading-relaxed" data-i18n="partnership.note">Interested in partnering with us? Reach out to explore collaboration opportunities in cloud, AI, and enterprise solutions.</p>
+              <a href="contact.html" data-btn-3d="btn-3d-link" class="inline-flex items-center gap-2 mt-4 text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors">
+                <span data-i18n="partnership.cta">Become a Partner</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Graphic -->
+    <section id="graphic" class="section-pad py-16 sm:py-24 bg-obsidian">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 sm:mb-16">
+          <span class="text-cyan-400 text-sm font-medium tracking-widest uppercase" data-i18n="graphic.label">Visual Design</span>
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3" data-i18n="graphic.title">Graphic</h2>
+          <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base px-2" data-i18n="graphic.desc">Bold visuals, brand identities, and digital art crafted for the next generation of tech.</p>
+        </div>
+
+        <div id="graphics-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div class="group card-hover tilt-card rounded-2xl overflow-hidden bg-charcoal neon-border">
+            <div class="graphic-media"><img src="images/graphic-brand.jpg" alt="Neon Brand System" class="media-img group-hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+            <div class="graphic-card-body p-4 sm:p-6">
+              <span class="text-xs text-cyan-400 font-medium tracking-wider uppercase" data-i18n="graphic.g1.cat">Brand Identity</span>
+              <h3 class="font-display text-lg font-bold text-white mt-2 mb-2" data-i18n="graphic.g1.title">Neon Brand System</h3>
+              <p class="text-gray-400 text-sm" data-i18n="graphic.g1.desc">Complete visual identity with logo, color palette, and typography.</p>
+            </div>
+          </div>
+          <div class="group card-hover tilt-card rounded-2xl overflow-hidden bg-charcoal neon-border">
+            <div class="graphic-media"><img src="images/graphic-ui.jpg" alt="Dark Dashboard UI" class="media-img group-hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+            <div class="graphic-card-body p-4 sm:p-6">
+              <span class="text-xs text-violet-400 font-medium tracking-wider uppercase" data-i18n="graphic.g2.cat">UI Design</span>
+              <h3 class="font-display text-lg font-bold text-white mt-2 mb-2" data-i18n="graphic.g2.title">Dark Dashboard UI</h3>
+              <p class="text-gray-400 text-sm" data-i18n="graphic.g2.desc">Futuristic admin panel with data visualization and neon accents.</p>
+            </div>
+          </div>
+          <div class="group card-hover tilt-card rounded-2xl overflow-hidden bg-charcoal neon-border">
+            <div class="graphic-media"><img src="images/graphic-motion.jpg" alt="Tech Intro Animation" class="media-img group-hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+            <div class="graphic-card-body p-4 sm:p-6">
+              <span class="text-xs text-green-400 font-medium tracking-wider uppercase" data-i18n="graphic.g3.cat">Motion Graphic</span>
+              <h3 class="font-display text-lg font-bold text-white mt-2 mb-2" data-i18n="graphic.g3.title">Tech Intro Animation</h3>
+              <p class="text-gray-400 text-sm" data-i18n="graphic.g3.desc">Dynamic motion graphics and particle effects for launch videos.</p>
+            </div>
+          </div>
+          <div class="group card-hover tilt-card rounded-2xl overflow-hidden bg-charcoal neon-border">
+            <div class="graphic-media"><img src="images/graphic-3d.jpg" alt="Holographic Product" class="media-img group-hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+            <div class="graphic-card-body p-4 sm:p-6">
+              <span class="text-xs text-orange-400 font-medium tracking-wider uppercase" data-i18n="graphic.g4.cat">3D Render</span>
+              <h3 class="font-display text-lg font-bold text-white mt-2 mb-2" data-i18n="graphic.g4.title">Holographic Product</h3>
+              <p class="text-gray-400 text-sm" data-i18n="graphic.g4.desc">Photorealistic 3D renders and holographic product visualizations.</p>
+            </div>
+          </div>
+          <div class="group card-hover tilt-card rounded-2xl overflow-hidden bg-charcoal neon-border">
+            <div class="graphic-media"><img src="images/graphic-web.jpg" alt="Landing Page Assets" class="media-img group-hover:scale-105 transition-transform duration-500" loading="lazy" /></div>
+            <div class="graphic-card-body p-4 sm:p-6">
+              <span class="text-xs text-blue-400 font-medium tracking-wider uppercase" data-i18n="graphic.g5.cat">Web Graphic</span>
+              <h3 class="font-display text-lg font-bold text-white mt-2 mb-2" data-i18n="graphic.g5.title">Landing Page Assets</h3>
+              <p class="text-gray-400 text-sm" data-i18n="graphic.g5.desc">Custom icons, illustrations, and hero graphics for web experiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-pad py-16 sm:py-24 bg-void grid-bg">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 sm:mb-14">
+          <span class="text-cyan-400 text-sm font-medium tracking-widest uppercase" data-i18n="faq.label">FAQ</span>
+          <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3" data-i18n="faq.title">Frequently Asked Questions</h2>
+          <p class="text-gray-400 mt-4 max-w-xl mx-auto text-sm sm:text-base px-2" data-i18n="faq.desc">Quick answers about our services, process, and how we can help your business grow.</p>
+        </div>
+
+        <div id="faq-list" class="space-y-3">
+          <div class="faq-item rounded-2xl bg-charcoal neon-border overflow-hidden">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq.q1">What services does Technology offer?</span>
+              <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p data-i18n="faq.a1">We provide AI & machine learning, cloud infrastructure, cybersecurity, graphic design, and custom software development tailored to your business needs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item rounded-2xl bg-charcoal neon-border overflow-hidden">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq.q2">How long does a typical project take?</span>
+              <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p data-i18n="faq.a2">Timelines vary by scope — a branding project may take 2–4 weeks, while enterprise cloud or AI solutions typically run 2–6 months. We provide a detailed timeline after the initial consultation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item rounded-2xl bg-charcoal neon-border overflow-hidden">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq.q3">Do you offer ongoing support and maintenance?</span>
+              <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p data-i18n="faq.a3">Yes. We offer 24/7 monitoring, security updates, performance optimization, and dedicated support plans to keep your systems running smoothly after launch.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item rounded-2xl bg-charcoal neon-border overflow-hidden">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq.q4">What industries do you work with?</span>
+              <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p data-i18n="faq.a4">We serve clients across finance, healthcare, e-commerce, manufacturing, and startups — from Fortune 500 companies to early-stage ventures in Myanmar and beyond.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item rounded-2xl bg-charcoal neon-border overflow-hidden">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq.q5">How do I get started?</span>
+              <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p data-i18n="faq.a5">Simply reach out via our contact form or email. We'll schedule a free discovery call to understand your goals and propose a tailored solution.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item rounded-2xl bg-charcoal neon-border overflow-hidden">
+            <button type="button" class="faq-trigger" aria-expanded="false">
+              <span data-i18n="faq.q6">Can you integrate with our existing systems?</span>
+              <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-panel">
+              <div class="faq-panel-inner">
+                <p data-i18n="faq.a6">Absolutely. We specialize in seamless integration with legacy systems, third-party APIs, and multi-cloud environments without disrupting your operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 sm:py-12 border-t border-white/5 bg-obsidian">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-center md:text-left">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-violet-600 flex items-center justify-center">
+              <span class="font-display font-bold text-black text-xs" data-setting="brand_logo">T</span>
+            </div>
+            <span class="font-display font-bold tracking-wider text-white text-sm" data-setting-html="brand_name">
+              TECH<span class="text-cyan-400">NOLOGY</span>
+            </span>
+          </div>
+          <p class="text-gray-500 text-xs sm:text-sm" data-i18n="footer.rights">&copy; 2026 Black Technology. All rights reserved.</p>
+          <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+            <a href="#" data-setting-href="footer_privacy_url" class="text-gray-500 hover:text-cyan-400 transition-colors text-sm" data-i18n="footer.privacy">Privacy</a>
+            <a href="#" data-setting-href="footer_terms_url" class="text-gray-500 hover:text-cyan-400 transition-colors text-sm" data-i18n="footer.terms">Terms</a>
+            <a href="http://localhost:8001/login" data-setting-href="admin_panel_url" class="text-gray-500 hover:text-cyan-400 transition-colors text-sm" data-i18n="footer.admin">Admin Panel</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/theme.js"></script>
+    <script type="module" src="js/three-init.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
